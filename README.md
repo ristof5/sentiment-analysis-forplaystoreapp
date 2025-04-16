@@ -21,6 +21,10 @@ Pastikan file CSV memiliki kolom berikut agar kompatibel dengan aplikasi:
 - `Tanggal`
 - `Nama Aplikasi`
 
+## 🎈 Demo
+
+Ini merupakan ini link demonya https://riffani.pythonanywhere.com/
+
 Contoh struktur CSV:
 
 | Komentar | Nama Pengguna | Rating | Tanggal | Nama Aplikasi |
