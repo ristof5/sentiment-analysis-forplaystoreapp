@@ -5,10 +5,6 @@ Web aplikasi berbasis Flask untuk menganalisis sentimen pengguna terhadap aplika
 ## 📌 Fitur
 
 - Upload file CSV yang berisi data ulasan aplikasi
-- Analisis sentimen berdasarkan rating:
-  - Rating 1–2 → Negatif
-  - Rating 3 → Netral
-  - Rating 4–5 → Positif
 - Menampilkan hasil analisis dalam tabel (preview 25 data pertama)
 - Visualisasi sentimen dengan:
   - Pie chart distribusi sentimen
@@ -30,11 +26,3 @@ Contoh struktur CSV:
 | Komentar | Nama Pengguna | Rating | Tanggal | Nama Aplikasi |
 |----------|----------------|--------|---------|----------------|
 | Aplikasinya bagus | user123 | 5 | 2024-03-01 | InfoBMKG |
-
-## 🚀 Cara Menjalankan Secara Lokal
-
-### 1. Clone Repo
-
-```bash
-git clone https://github.com/username/sentiment-analysis-forplaystoreapp.git
-cd sentiment-analysis-forplaystoreapp
