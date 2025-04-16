@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisis Sentimen</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="header">Analisis Sentimen Komentar</h2>
+
+        <!-- Form Upload -->
+        <form method="POST" enctype="multipart/form-data" class="upload-form">
+            <label for="file-upload" class="button">Pilih File CSV</label>
+            <input type="file" name="file" id="file-upload" required>
+            <button type="submit" class="button button-secondary">Lihat Hasil</button>
+        </form>        
+
+        <p class="note">
+            ⚠️ Pastikan file CSV memiliki kolom berikut: <strong>Komentar</strong>, <strong>Nama Pengguna</strong>, 
+            <strong>Rating</strong>, <strong>Tanggal</strong>, dan <strong>Nama Aplikasi</strong>.
+        </p>
+        
+
+        {% if data_preview %}
+        <div class="result-container">
+            <h3>Total Komentar Dianalisis: {{ total_rows }}</h3>
+            <h3>Hasil Analisis Sentimen (1-10 Data Pertama)</h3>
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Pengguna</th>
+                        <th>Rating</th>
+                        <th>Komentar</th>
+                        <th>Sentimen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data_preview %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ row["Nama Pengguna"] }}</td>
+                        <td>{{ row["Rating"] }}</td>
+                        <td>{{ row["Komentar"] }}</td>
+                        <td>{{ row["Sentimen"] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <!-- Tombol untuk menampilkan grafik -->
+            <button onclick="toggleGraphics()" class="button">Lihat Grafik</button>
+
+            <!-- Grafik Pie Chart -->
+            <div id="graphics" style="display: none;">
+                <h3>Distribusi Sentimen</h3>
+                <img src="{{ pie_chart }}" alt="Pie Chart" class="chart-img">
+
+                <!-- WordClouds -->
+                <h3>Word Cloud Sentimen</h3>
+                <div class="wordcloud-container">
+                    <div>
+                        <h4>Positif</h4>
+                        <img src="{{ wordclouds['Positif'] }}" alt="Word Cloud Positif" class="chart-img">
+                    </div>
+                    <div>
+                        <h4>Negatif</h4>
+                        <img src="{{ wordclouds['Negatif'] }}" alt="Word Cloud Negatif" class="chart-img">
+                    </div>
+                    <div>
+                        <h4>Netral</h4>
+                        <img src="{{ wordclouds['Netral'] }}" alt="Word Cloud Netral" class="chart-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tombol Download Hasil Analisis -->
+            <a href="{{ file_download }}" class="button">Download Hasil CSV</a>
+
+            <!-- Tombol Upload Ulang -->
+            <a href="/" class="button">Upload File Baru</a>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function toggleGraphics() {
+            let graphicsDiv = document.getElementById("graphics");
+            graphicsDiv.style.display = (graphicsDiv.style.display === "none") ? "block" : "none";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* Warna Utama */
+:root {
+  --main-color: #273fa1;
+  --secondary-color: #1e1e2a;
+  --bg-color: #f4f4f4;
+  --text-color: #333;
+  --white: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk Body */
+body {
+  color: var(--text-color);
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Container Utama */
+.container {
+  max-width: 900px;
+  width: 100%;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0px 5px 15px var(--shadow);
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Header */
+.header {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 20px;
+}
+
+/* Input File */
+.file-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.file-input input {
+  padding: 10px;
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Tombol Upload */
+.button {
+  background: var(--main-color);
+  color: var(--white);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* Warna alternatif untuk tombol 'Lihat Hasil' */
+.button.button-secondary {
+  background: #102E50; /* Ganti sesuai selera, misal ungu */
+  color: white;
+}
+
+.button.button-secondary:hover {
+  background: #BE3D2A;
+}
+
+.upload-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.note {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.custom-file-upload {
+  background: var(--main-color, #273fa1); /* fallback jika --main-color tidak didefinisikan */
+  color: var(--white, white);
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.custom-file-upload:hover {
+  background: var(--main-color-dark, #1d2f80);
+}
+
+input[type="file"] {
+  display: none; /* Sembunyikan aslinya */
+}
+
+.button:hover {
+  background: #1d2f80;
+}
+
+/* Area Hasil */
+.result-container {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.result-container h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--main-color);
+  margin-bottom: 10px;
+}
+
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.result-table th, 
+.result-table td {
+  padding: 10px;
+  border: 1px solid var(--shadow);
+  text-align: left;
+}
+
+.result-table th {
+  background: var(--main-color);
+  color: var(--white);
+}
+
+.result-table tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .header {
+    font-size: 20px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .result-container h3 {
+    font-size: 18px;
+  }
+}
+
+.chart-img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 10px auto;
+}
+
+.wordcloud-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.wordcloud-container div {
+    text-align: center;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid black;
+}
+
+.wordcloud-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.wordcloud-container div {
+    text-align: center;
+}
+
