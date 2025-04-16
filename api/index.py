@@ -82,3 +82,6 @@ def index():
                            wordcloud_netral=wordcloud_netral,
                            wordcloud_negatif=wordcloud_negatif,
                            total_rows=total_rows)
+def handler(environ, start_response):
+    return app(environ, start_response)
+
